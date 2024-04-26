@@ -7,9 +7,9 @@ public abstract class Prison {
     private int capacity;
     private int age;
     private String crime;
-    private int prisonerCount;
+    private static int prisonerCount;
     protected static Scanner scanner = new Scanner(System.in);
-    private String[] prisoners;
+    private static String[] prisoners;
     public String crimeSeverity;
 
 
@@ -88,7 +88,7 @@ public abstract class Prison {
             System.out.println("Тюрьма заполнена. Невозможно заключить нового заключенного.");
         }
     }
-    public void displayPrisoners() {
+    public static void displayPrisoners() {
         System.out.println("Список заключенных:");
         for (int i = 0; i < prisonerCount; i++) {
             System.out.println((i + 1) + ". " + prisoners[i]);
@@ -96,7 +96,7 @@ public abstract class Prison {
         }
     }
 
-    public void inviteTattooArtist() {
+    public static void inviteTattooArtist() {
         System.out.print("Введите имя тату мастера: ");
         String artistName = scanner.next();
         System.out.print("За что сидит в тюрьме тату мастер " + artistName + ": ");
@@ -108,11 +108,11 @@ public abstract class Prison {
         System.out.println("Проводится слушание по условно-досрочному освобождению.");
     }
 
-    public void drugSearch() {
+    public static void drugSearch() {
         System.out.println("Проводится обыск в поисках наркотиков.");
     }
 
-    public void organizePrisonRiot() {
+    public static void organizePrisonRiot() {
         System.out.println("Организуется восстание в тюрьме.");
     }
 
